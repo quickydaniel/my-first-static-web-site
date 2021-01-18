@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App 4</title>
+  <p>Loadin message from API <b id="name">....</b></p>
 </head>
 
 <body>
@@ -13,5 +14,17 @@
     <h1>Vanilla JavaScript App 2</h1>
   </main>
 </body>
+<script>
+(async function(){
+let {text}=await (await fetch('/api/GetMessage')).json();
+console.log("hej")
+document.querySelector('#name').textContent=text;
+
+
+}())
+
+
+
+</script>
 
 </html>
